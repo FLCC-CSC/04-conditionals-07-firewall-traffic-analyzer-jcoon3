@@ -14,7 +14,7 @@ transfer_size = int(input("Enter the data transfer size in megabytes (MB): "))
 
 # If statement checking if the file size on port 22 is greater than 500MB 
 # and prints a high risk statement of unauthorized remote access if it is
-if port_num == 22 and transfer_size > 500:
+if port_num == 22 or port_num == 3389 and transfer_size >= 100:
     
     # Print statements showing the analyzed traffic and the risk assessment
     print("\nFIREWALL LOG:")
@@ -22,8 +22,8 @@ if port_num == 22 and transfer_size > 500:
     print("Risk Assessment: HIGH RISK: Potential unauthorized remote access detected!")
     print("------------------------")
 
-# elif clause checking if the file size being transfered on port 80 is greater than 120MB
-# if it is, a medium risk flag of large unecrypted file data transfer detected    
+# elif clause checking if the file size being transfered on port 80 is greater than 100MB
+# If it is, a medium risk flag of large unecrypted file data transfer detected    
 elif port_num == 80 and transfer_size > 100:
     
     # Print statements showing the analyzed traffic and the risk assessment
